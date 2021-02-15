@@ -1,33 +1,40 @@
 import React, { Component } from 'react';
 import Directory from './DirectoryComponent';
 import Section from './SectionComponent';
-import { View } from 'react-native';
-import { SECTIONS } from '../shared/sections';
+import { View, Platform } from 'react-native';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
+
+const DirectoryNavigator = createStackNavigator(
+    {
+        Directory: { screen: Directory },
+        Section: { screen: Section }
+    }, 
+    {
+        initialRouteName: 'Directory',
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#7D6447'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            }
+        }
+    }
+);
+
+const AppNavigator = createAppContainer(DirectoryNavigator);
 
 class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sections: SECTIONS,
-            selectedSection: null
-        };
-    }
-
-    onSectionSelect(sectionId) {
-        this.setState({selectedSection: sectionId});
-    }
-
-        render() {
-            return (
-        <View style={{flex: 1}}>
-                <Directory
-                    sections={this.state.sections}
-                    onPress={sectionId => this.onSectionSelect(sectionId)}
-                />
-                <Section
-                    section={this.state.sections.filter(
-                        section => section.id === this.state.selectedSection)[0]}
-                />
+    render() {
+        return (
+            <View
+                style={{
+                    flex: 1,
+                    paddingTop: Platform.OS === 'ios' ? 0 : Expo.Constants.statusBarHeight
+            }}>
+                <AppNavigator />
             </View>
         );    
     }
