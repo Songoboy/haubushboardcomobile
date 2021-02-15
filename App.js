@@ -1,13 +1,11 @@
 import React from 'react';
 import Main from './components/MainComponent';
-import Directory from './components/DirectoryComponent';
-import { StyleSheet, Text, View } from 'react-native';
-
+// import Directory from './components/DirectoryComponent';
+// import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
     return (
         <Main />
-        
     );
 }
 
