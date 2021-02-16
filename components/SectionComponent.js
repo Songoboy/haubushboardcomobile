@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView, FlatList } from 'react-native';
 import { Card } from 'react-native-elements';
 import { SECTIONS } from '../shared/sections';
 
@@ -30,7 +30,7 @@ class Section extends Component {
     }
 
     static navigationOptions = {
-        title: 'Section Information'
+        title: 'Sections'
     }
 
     render() {
