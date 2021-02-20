@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Image, ImageBackground } from 'react-native';
+import { View, Text, ScrollView, FlatList } from 'react-native';
 import { Card } from 'react-native-elements';
 import { HOMEPAGE } from '../shared/homepage';
 
@@ -7,8 +7,8 @@ function RenderItem({item}) {
     if (item) {
         return (
             <Card style 
-                featuredTitle={item.name}
-                image={require('./images/HAUBUSH_Main2.jpg')}
+                // featuredTitle={item.name}
+                image={require('./images/HauBushBoardCo_LOGO(1-21).png')}
             >
                 <Text style={{margin: 10}}>
                     {item.description}

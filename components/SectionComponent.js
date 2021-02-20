@@ -9,7 +9,7 @@ function RenderSection({section}) {
         return (
             <Card 
                 featuredTitle={section.name}
-                image={require('./images/HAUBUSH_Main2.jpg')}
+                image={require('./images/HauBushBoardCo_LOGO(1-21).png')}
             >
                 <Text style={{margin: 10}}>
                     {section.description}
