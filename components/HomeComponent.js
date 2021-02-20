@@ -36,7 +36,7 @@ class Home extends Component {
                         style={{
                             fontWeight: "bold",
                             fontSize: 25,
-                            color: "white",
+                            color: "yellow",
                             position: "absolute", // child
                             top: 40, // position where you want
                             left: 120,
